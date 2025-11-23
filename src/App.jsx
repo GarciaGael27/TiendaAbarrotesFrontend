@@ -1,21 +1,16 @@
-import { useState, useEffect } from 'react';
 import './App.css';
+import { PrimeReactProvider } from 'primereact/api';
+import { Button } from 'primereact/button';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    fetch('http://localhost:3000')
-      .then(res => res.json())
-      .then(data => setMessage(data.message))
-      .catch(err => console.error(err));
-  }, []);
 
   return (
-    <div className="App">
-      <h1>Tienda de Abarrotes</h1>
-      <p>Mensaje del backend: {message}</p>
-    </div>
+    <PrimeReactProvider>
+      <div className="App">
+        <h1>Welcome to My PrimeReact App</h1>
+        <Button label="Click Me"/>
+      </div>
+    </PrimeReactProvider>
   );
 }
 
