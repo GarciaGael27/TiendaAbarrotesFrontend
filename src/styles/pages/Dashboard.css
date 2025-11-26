@@ -1,0 +1,99 @@
+/* Estilos para la página Dashboard */
+.dashboard {
+  padding: var(--spacing-xl) var(--spacing-md);
+  min-height: calc(100vh - 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard__header {
+  margin-bottom: var(--spacing-xl);
+  text-align: left;
+  padding-left: var(--spacing-md);
+}
+
+.dashboard__title {
+  color: #1a1a1a;
+  margin-bottom: var(--spacing-xs);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dashboard__subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dashboard__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.dashboard__card {
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-lg);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard__card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.dashboard__card-title {
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.dashboard__card-value {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dashboard__card-change {
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.dashboard__card-change--positive {
+  color: var(--success-color);
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.dashboard__card-change--negative {
+  color: var(--error-color);
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .dashboard__grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
