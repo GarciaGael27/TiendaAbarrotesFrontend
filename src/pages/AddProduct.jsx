@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import '../styles/pages/AddProduct.css';
+import comestiblesService from '../services/ComestiblesService';
+import limpiezaService from '../services/limpiezaService';
+import ropaService from '../services/ropaService';
 
 const AddProduct = () => {
   const [productData, setProductData] = useState({
-    // Campos comunes a todos los productos
+    // Campos comunes a todos los productos (sin codigo_visual)
     nombre: '',
     precio: '',
     marca: '',
@@ -27,6 +30,10 @@ const AddProduct = () => {
     genero: ''
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
   const categorias = [
     'Comestibles',
     'Limpieza',
@@ -46,65 +53,84 @@ const AddProduct = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
-    // Preparar datos según la categoría
-    let dataToSend = {
-      nombre: productData.nombre,
-      precio: parseFloat(productData.precio),
-      marca: productData.marca,
-      cantidad: parseInt(productData.cantidad),
-      categoria: productData.categoria
-    };
+    setLoading(true);
+    setError(null);
+    setSuccess(false);
 
-    // Agregar campos específicos según la categoría
-    if (productData.categoria === 'Comestibles') {
-      dataToSend = {
-        ...dataToSend,
-        fecha_caducidad: productData.fecha_caducidad,
-        tipo: productData.tipo,
-        porcion: productData.porcion
+    try {
+      let dataToSend = {
+        nombre: productData.nombre,
+        precio: parseFloat(productData.precio),
+        marca: productData.marca,
+        cantidad: parseInt(productData.cantidad)
       };
-    } else if (productData.categoria === 'Limpieza') {
-      dataToSend = {
-        ...dataToSend,
-        uso: productData.uso,
-        porcion: productData.porcion_limpieza
-      };
-    } else if (productData.categoria === 'Ropa') {
-      dataToSend = {
-        ...dataToSend,
-        tipo_tela: productData.tipo_tela,
-        talla: productData.talla,
-        tipo: productData.tipo_ropa,
-        color: productData.color,
-        genero: productData.genero
-      };
+
+      let response;
+      
+      if (productData.categoria === 'Comestibles') {
+        dataToSend = {
+          ...dataToSend,
+          fecha_caducidad: productData.fecha_caducidad,
+          tipo: productData.tipo,
+          porcion: productData.porcion
+        };
+        console.log('Enviando datos comestibles:', dataToSend);
+        response = await comestiblesService.create(dataToSend);
+      } else if (productData.categoria === 'Limpieza') {
+        dataToSend = {
+          ...dataToSend,
+          uso: productData.uso,
+          porcion: productData.porcion_limpieza
+        };
+        console.log('Enviando datos limpieza:', dataToSend);
+        response = await limpiezaService.create(dataToSend);
+      } else if (productData.categoria === 'Ropa') {
+        dataToSend = {
+          ...dataToSend,
+          tipo_tela: productData.tipo_tela,
+          talla: productData.talla,
+          tipo: productData.tipo_ropa,
+          color: productData.color,
+          genero: productData.genero
+        };
+        console.log('Enviando datos ropa:', dataToSend);
+        response = await ropaService.create(dataToSend);
+      } else {
+        throw new Error('Categoría no válida');
+      }
+
+      console.log('Producto creado exitosamente:', response);
+      setSuccess(true);
+      
+      setProductData({
+        nombre: '',
+        precio: '',
+        marca: '',
+        cantidad: '',
+        categoria: '',
+        fecha_caducidad: '',
+        tipo: '',
+        porcion: '',
+        uso: '',
+        porcion_limpieza: '',
+        tipo_tela: '',
+        talla: '',
+        tipo_ropa: '',
+        color: '',
+        genero: ''
+      });
+      
+      setTimeout(() => setSuccess(false), 3000);
+      
+    } catch (err) {
+      console.error('Error al crear producto:', err);
+      setError(err.message || 'Error al agregar el producto. Intenta nuevamente.');
+    } finally {
+      setLoading(false);
     }
-
-    console.log('Datos del producto:', dataToSend);
-    
-    // Resetear formulario después del envío
-    setProductData({
-      nombre: '',
-      precio: '',
-      marca: '',
-      cantidad: '',
-      categoria: '',
-      fecha_caducidad: '',
-      tipo: '',
-      porcion: '',
-      uso: '',
-      porcion_limpieza: '',
-      tipo_tela: '',
-      talla: '',
-      tipo_ropa: '',
-      color: '',
-      genero: ''
-    });
-    
-    alert('Producto agregado exitosamente');
   };
 
   const renderSpecificFields = () => {
@@ -328,6 +354,18 @@ const AddProduct = () => {
         </div>
 
         <form className="add-product__form" onSubmit={handleSubmit}>
+          {/* Mensajes de estado */}
+          {error && (
+            <div className="error-message" style={{color: 'red', marginBottom: '20px'}}>
+              {error}
+            </div>
+          )}
+          {success && (
+            <div className="success-message" style={{color: 'green', marginBottom: '20px'}}>
+              ¡Producto agregado exitosamente! El código se generó automáticamente.
+            </div>
+          )}
+
           <div className="form-group">
             <label htmlFor="nombre" className="form-label">
               Nombre del Producto
@@ -420,9 +458,15 @@ const AddProduct = () => {
 
           {renderSpecificFields()}
 
-          <button type="submit" className="add-product__submit-btn">
-            <span className="submit-btn__icon">+</span>
-            Agregar
+          <button 
+            type="submit" 
+            className="add-product__submit-btn"
+            disabled={loading}
+          >
+            <span className="submit-btn__icon">
+              {loading ? '' : '+'}
+            </span>
+            {loading ? 'Agregando...' : 'Agregar'}
           </button>
         </form>
       </div>

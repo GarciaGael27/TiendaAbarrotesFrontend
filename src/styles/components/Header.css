@@ -1,5 +1,5 @@
 .app-header {
-    background-color: #f3f3f4;
+    background-color: #315762;
     padding: 20px;
     color: rgb(11, 1, 1);
     width: 100%;
@@ -37,7 +37,7 @@
   margin: 0;
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(11, 1, 1);
+  color: #efefef
 }
 
 nav {
@@ -46,7 +46,7 @@ nav {
 }
 
 nav a { /* <Link> se renderiza como una <a>, así que podemos estilizarla */
-  color: rgb(10, 0, 0);
+  color: #efefef;
   align-items: center;
   text-decoration: none;
   font-weight: bold;
@@ -56,5 +56,5 @@ nav a { /* <Link> se renderiza como una <a>, así que podemos estilizarla */
 }
 
 nav a:hover {
-  border-bottom-color: #de5799; /* Color azul de React */
+  border-bottom-color: #efefef; /* Color azul de React */
 }

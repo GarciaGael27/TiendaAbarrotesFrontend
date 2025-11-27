@@ -1,4 +1,6 @@
 /* Importar fuente Inter desde Google Fonts */
+@import './styles/globals/variables.css';
+@import './styles/globals/base.css';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Reset básico para asegurar que el header ocupe toda la página */
@@ -15,8 +17,7 @@ html, body {
 }
 
 /* Importaciones de Estilos Globales */
-@import './styles/globals/variables.css';
-@import './styles/globals/base.css';
+
 
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
