@@ -13,7 +13,7 @@
 }
 
 .dashboard__title {
-  color: #1a1a1a;
+  color: #4A148C;
   margin-bottom: var(--spacing-xs);
   font-size: 1.875rem;
   font-weight: 600;
@@ -21,7 +21,7 @@
 }
 
 .dashboard__subtitle {
-  color: #6b7280;
+  color: #4A148C;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.4;

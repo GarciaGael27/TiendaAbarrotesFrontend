@@ -1,7 +1,7 @@
 .add-sale {
   padding: 20px;
   min-height: 100vh;
-  background-color: var(--background-color, #f8fafc);
+  background-color: var(--background-color, #e6acff);
 }
 
 .add-sale__container {
@@ -123,7 +123,7 @@
 .product-card__add-btn {
   width: 100%;
   padding: 8px 12px;
-  background-color: var(--primary-color, #007bff);
+  background-color: #a65ec3;
   color: white;
   border: none;
   border-radius: 6px;
@@ -137,7 +137,7 @@
 }
 
 .product-card__add-btn:hover:not(:disabled) {
-  background-color: var(--primary-color-dark, #0056b3);
+  background-color: var(--primary-color-dark, #4A148C);
 }
 
 .product-card__add-btn:disabled {

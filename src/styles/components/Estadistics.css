@@ -1,6 +1,6 @@
 /* Componente StatCard - Tarjeta de Estadísticas */
 .stat-card {
-  background: #ffffff;
+  background: #f7d6fe;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -29,7 +29,7 @@
 .stat-card__title {
   font-size: 14px;
   font-weight: 500;
-  color: #64748b;
+  color: #715395;
   margin: 0 0 12px 0;
   line-height: 1.4;
 }
@@ -39,7 +39,7 @@
   font-weight: 700;
   margin: 0;
   line-height: 1.2;
-  color: #1e293b;
+  color: #715395;
 }
 
 .stat-card__icon {

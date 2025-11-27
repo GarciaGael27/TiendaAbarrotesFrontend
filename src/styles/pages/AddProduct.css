@@ -2,13 +2,13 @@
 .add-product {
   padding: var(--spacing-xl) var(--spacing-md);
   min-height: calc(100vh - 80px);
-  background-color: #f8fafc;
+  background-color: #e6acff;
 }
 
 .add-product__container {
   max-width: 600px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: #f7d6fe;
   border-radius: 16px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -16,8 +16,8 @@
 
 .add-product__header {
   padding: 32px 32px 24px 32px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #f1f5f9;
+  background-color: #f7d6fe;
+  border-bottom: 1px solid #f7d6fe;
 }
 
 .add-product__title {
@@ -39,11 +39,11 @@
   background-color: #f3f4f6;
   border-radius: 4px;
   font-size: 18px;
-  color: #6b7280;
+  color: #4A148C;
 }
 
 .add-product__subtitle {
-  color: #6b7280;
+  color: #4A148C;
   font-size: 0.975rem;
   font-weight: 400;
   margin: 0;
@@ -80,12 +80,12 @@
 .form-select {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid #d1d5db;
+  border: 1px solid #4A148C;
   border-radius: 8px;
   font-size: 0.975rem;
   font-family: var(--font-family-primary);
   background-color: #f9fafb;
-  color: #374151;
+  color: #4A148C;
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
@@ -93,13 +93,13 @@
 .form-input:focus,
 .form-select:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #4A148C;
   background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 0 3px #4A148C;
 }
 
 .form-input::placeholder {
-  color: #9ca3af;
+  color: #4A148C;
   font-weight: 400;
 }
 
@@ -114,12 +114,17 @@
 }
 
 .form-select option[value=""] {
-  color: #9ca3af;
+  color: #4A148C !important;
+}
+
+.form-select option:hover {
+  background-color: #4A148C !important;
+  color: #ffffff !important;
 }
 
 .add-product__submit-btn {
   width: 100%;
-  background-color: #1f2937;
+  background-color: #a65ec3;
   color: #ffffff;
   border: none;
   border-radius: 8px;
@@ -137,7 +142,7 @@
 }
 
 .add-product__submit-btn:hover {
-  background-color: #111827;
+  background-color: #4A148C;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }

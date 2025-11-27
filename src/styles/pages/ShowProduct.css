@@ -2,7 +2,7 @@
 .show-product {
   padding: var(--spacing-xl) var(--spacing-md);
   min-height: calc(100vh - 80px);
-  background-color: #f8fafc;
+  background-color: #e6acff;
 }
 
 .show-product__container {
@@ -17,8 +17,8 @@
 /* Header */
 .show-product__header {
   padding: 32px 32px 24px 32px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #f1f5f9;
+  background-color: #f7d6fe;
+  border-bottom: 1px solid #f7d6fe;
 }
 
 .header__title-section {
@@ -32,7 +32,7 @@
   gap: 12px;
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1f2937;
+  color: #4A148C;
   margin: 0 0 8px 0;
 }
 
@@ -47,7 +47,7 @@
 /* Search Bar */
 .show-product__search {
   padding: 0 32px 24px 32px;
-  background-color: #ffffff;
+  background-color: #f7d6fe;
   border-bottom: 1px solid #f1f5f9;
 }
 
@@ -80,7 +80,7 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #4A148C;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
@@ -105,7 +105,7 @@
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.875rem;
-  background-color: #ffffff;
+  background-color: #f8fafc;
   table-layout: auto;
 }
 
@@ -114,8 +114,8 @@
   padding: 18px 20px;
   text-align: left;
   font-weight: 600;
-  color: #374151;
-  border-bottom: 2px solid #e5e7eb;
+  color: #4A148C;
+  border-bottom: 2px solid #4A148C;
   white-space: nowrap;
   font-size: 0.875rem;
   letter-spacing: 0.025em;
@@ -168,7 +168,7 @@
   font-weight: 500;
   font-size: 0.85rem;
   padding: 4px 8px;
-  background-color: #f3f4f6;
+  background-color: #f8fafc;
   border-radius: 12px;
   display: inline-block;
   text-align: center;
@@ -319,7 +319,7 @@
 /* Pagination */
 .show-product__pagination {
   padding: 24px 32px;
-  background-color: #f8fafc;
+  background-color: #f7d6fe;
   border-top: 1px solid #f1f5f9;
 }
 
@@ -728,14 +728,14 @@
 }
 
 .btn--primary {
-  background-color: #3b82f6;
+  background-color: #a65ec3;
   color: white;
-  border-color: #3b82f6;
+  border-color: #a24ac5;
 }
 
 .btn--primary:hover {
-  background-color: #2563eb;
-  border-color: #2563eb;
+  background-color: #4A148C;
+  border-color: #43068c;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }

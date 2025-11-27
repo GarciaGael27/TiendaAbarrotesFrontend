@@ -1,5 +1,5 @@
 .app-header {
-    background-color: #315762;
+    background-color: #a65ec3;
     padding: 20px;
     color: rgb(11, 1, 1);
     width: 100%;
@@ -22,8 +22,8 @@
 }
 
 .app-header__logo {
-  max-width: 60px;
-  max-height: 60px;
+  max-width: 80px;
+  max-height: 80px;
   margin-right: 5px;
 }
 
@@ -56,5 +56,5 @@ nav a { /* <Link> se renderiza como una <a>, así que podemos estilizarla */
 }
 
 nav a:hover {
-  border-bottom-color: #efefef; /* Color azul de React */
+  border-bottom-color: #4A148C; /* Color morado oscuro */
 }

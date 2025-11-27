@@ -185,17 +185,17 @@ const DashboardPage = () => {
 
       {!loading && (
         <div className="dashboard__info" style={{
-          backgroundColor: 'white',
+          backgroundColor: '#f7d6fe',
           padding: '20px',
           borderRadius: '8px',
           marginTop: '20px',
           boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
         }}>
-          <h3 style={{ marginTop: 0, color: '#2c3e50' }}>Resumen del Sistema</h3>
+          <h3 style={{ marginTop: 0, color: '#4A148C' }}>Resumen del Sistema</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
             <div>
               <strong>Productos por Categoría:</strong>
-              <div style={{ fontSize: '0.9rem', color: '#6c757d', marginTop: '5px' }}>
+              <div style={{ fontSize: '0.9rem', color: '#715395', marginTop: '5px' }}>
                 • Comestibles: En inventario<br/>
                 • Limpieza: En inventario<br/>
                 • Ropa: En inventario
@@ -203,7 +203,7 @@ const DashboardPage = () => {
             </div>
             <div>
               <strong>Última actualización:</strong>
-              <div style={{ fontSize: '0.9rem', color: '#6c757d', marginTop: '5px' }}>
+              <div style={{ fontSize: '0.9rem', color: '#715395', marginTop: '5px' }}>
                 {new Date().toLocaleString('es-MX')}
               </div>
             </div>
