@@ -1,0 +1,60 @@
+.app-header {
+    background-color: #a65ec3;
+    padding: 20px;
+    color: rgb(11, 1, 1);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    justify-items: left;
+    margin: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.app-header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.app-header__logo {
+  max-width: 80px;
+  max-height: 80px;
+  margin-right: 5px;
+}
+
+.logo-nav {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-nav h1 {
+  margin: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #efefef
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a { /* <Link> se renderiza como una <a>, así que podemos estilizarla */
+  color: #efefef;
+  align-items: center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.2s;
+}
+
+nav a:hover {
+  border-bottom-color: #4A148C; /* Color morado oscuro */
+}
